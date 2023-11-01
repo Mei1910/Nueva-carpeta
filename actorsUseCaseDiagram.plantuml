@@ -1,11 +1,35 @@
 @startuml actorsUseCaseDiagram
 left to right direction
-actor Player
-usecase Start
-usecase Play
-usecase Resume
+class equipo{
+    +nombre
+    +registro
+}
+class persona{
+    +nombre
+    +teléfono
+    +dirección
+}
+class jugador{
+    +Número
+    +posición
+}
+class entrenador{
+    +nivel
+    +experiencia
+}
+class capitan{
 
-Player --> Start
-Player --> Play
-Player --> Resume
+}
+class juego{
+    +localidad
+    +puntuacion
+}
+equipo<|--persona
+persona<|--jugador
+persona<|--entrenador
+capitan<|--jugador
+equipo  *--"6..19" jugador
+equipo *-- "1" entrenador
+equipo *-- "1" capitan 
+juego o-- equipo
 @enduml
