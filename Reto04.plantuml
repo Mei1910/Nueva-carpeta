@@ -1,0 +1,116 @@
+@startuml
+
+
+map juego {
+ equipo 1 => 
+ equipo 2 => 
+ lugar => Venezuela
+}
+
+object entrenador1{
+        numero:
+        posicion:
+        teléfono:
+        nombre:
+        dirección:
+}
+object entrenador2{
+        numero:
+        posicion:
+        teléfono:
+        nombre:
+        dirección:
+}
+package equipo1{
+    object capitán1{
+        numero:
+        posicion:
+        teléfono:
+        nombre:
+        dirección:
+    }
+    object jugador2{
+        numero:
+        posicion:
+        teléfono:
+        nombre:
+        dirección:
+    }
+    object jugador3{
+        numero:
+        posicion:
+        teléfono:
+        nombre:
+        dirección:
+    }
+    object jugador4{
+        numero:
+        posicion:
+        teléfono:
+        nombre:
+        dirección:
+    }
+    object jugador5{
+        numero:
+        posicion:
+        teléfono:
+        nombre:
+        dirección:
+    }
+    object jugador6{
+        numero:
+        posicion:
+        teléfono:
+        nombre:
+        dirección:
+    }
+}
+package equipo2{
+    object capitán2{
+        numero:
+        posicion:
+        teléfono:
+        nombre:
+        dirección:
+    }
+    object jugador7{
+        numero:
+        posicion:
+        teléfono:
+        nombre:
+        dirección:
+    }
+    object jugador8{
+        numero:
+        posicion:
+        teléfono:
+        nombre:
+        dirección:
+    }
+    object jugador9{
+        numero:
+        posicion:
+        teléfono:
+        nombre:
+        dirección:
+    }
+    object jugador10{
+        numero:
+        posicion:
+        teléfono:
+        nombre:
+        dirección:
+    }
+    object jugador11{
+        numero:
+        posicion:
+        teléfono:
+        nombre:
+        dirección:
+    }
+}
+equipo1 o-- entrenador1
+equipo2 o-- entrenador2
+juego <.. equipo1
+juego <.. equipo2
+@enduml
