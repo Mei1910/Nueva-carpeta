@@ -1,0 +1,41 @@
+@startuml
+skinparam state {
+    BackgroundColor White
+    BorderColor Black
+    FontName Arial
+}
+
+state "Pedido no realizado" as PNR
+state "Pedido realizado" as PR
+state "Pago no realizado" as PNR2
+state "Pago realizado" as PR2
+state "Producto no enviado" as PNE
+state "Producto enviado" as PE
+state "Producto no recibido" as PNR3
+state "Producto recibido" as PR3
+state "Recibo no enviado" as RNE
+state "Recibo enviado" as RE
+state "Servicio no dado" as SND
+state "Servicio dado" as SD
+
+PNR -right-> PR : Encargar Producto / Validar Pedido
+PR --> PNR2 : /
+PNR2 -right-> PR2 : Pagar / Cobrar Pago
+PR2 --> PNE : /
+PNE -left-> PE : / Enviar Pedido
+PE -right-> PNR3 : / Obtener Producto
+PNR3 -right-> PR3 : Recibir Producto /
+PR3 --> RNE : /
+RNE -right-> RE : / Enviar Recibo
+RE --> SND : /
+SND -right-> SD : / Dar Servicio a los clientes
+
+PNR : --> PNR2 : Cliente
+PR : --> PNR3 : Cliente
+PR3 : --> RNE : Cliente
+SD : --> RE : Establecimiento
+RE : --> RNE : Establecimiento
+RNE : --> PE : Establecimiento
+PE : --> PNE : Establecimiento
+
+@enduml

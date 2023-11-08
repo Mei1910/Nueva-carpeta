@@ -1,0 +1,16 @@
+@startuml
+frame Registro {
+  object registro
+  object catalogo
+  object venta
+}
+frame Venta {
+  object lineasVenta
+  object lineaVenta
+}
+registro -> catalogo : 1: getEspecificacion(id)
+catalogo -> registro : 2: espec
+registro -> venta : 3: crearLineaVenta(espec, cant)
+venta -> lineasVenta : 4: añadir(new LineaVenta(espec, cant))
+lineasVenta -> lineaVenta : 5: new LineaVenta(espec, cant)
+@enduml
